@@ -1,6 +1,6 @@
-﻿using graphicsApp.Models;
+﻿using ImageHoster.Domain.Models;
 
-namespace graphicsApp.Services.Interfaces
+namespace ImageHoster.Domain.Services.Interfaces
 {
     public interface IBasicPhotoService
     {

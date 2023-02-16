@@ -1,8 +1,8 @@
-﻿using graphicsApp.Exceptions.BasicPhotoExceptions.Repository;
-using graphicsApp.Models;
+﻿using ImageHoster.Domain.Exceptions.BasicPhotoExceptions.Repository;
+using ImageHoster.Domain.Models;
 using ImageHoster.Domain.Repositories;
 
-namespace graphicsApp.Repositories
+namespace ImageHoster.Repositories
 {
     public class BasicPhotoRepository : IBasicPhotoRepository
     {

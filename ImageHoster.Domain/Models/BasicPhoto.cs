@@ -1,7 +1,7 @@
-﻿using graphicsApp.Exceptions.BasicPhotoExceptions;
+﻿using ImageHoster.Domain.Exceptions.BasicPhotoExceptions;
 using System.Reflection;
 
-namespace graphicsApp.Models
+namespace ImageHoster.Domain.Models
 {
    public class BasicPhoto
     {

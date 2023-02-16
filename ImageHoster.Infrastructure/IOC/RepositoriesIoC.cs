@@ -1,7 +1,5 @@
-﻿using graphicsApp.Repositories;
-using graphicsApp.Services.Interfaces;
-using graphicsApp.Services;
-using ImageHoster.Domain.Repositories;
+﻿using ImageHoster.Domain.Repositories;
+using ImageHoster.Repositories;
 
 namespace ImageHoster.Infrastructure.IOC
 {

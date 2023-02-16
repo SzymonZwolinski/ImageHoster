@@ -1,13 +1,13 @@
-﻿using graphicsApp.Models;
-using graphicsApp.Services.Interfaces;
+﻿using ImageHoster.Domain.Models;
 using ImageHoster.Domain.Repositories;
+using ImageHoster.Domain.Services.Interfaces;
 
-namespace graphicsApp.Services
+namespace ImageHoster.Domain.Services
 {
     public class BasicPhotoService : IBasicPhotoService
     {
         private readonly IBasicPhotoRepository basicPhotoRepository;
-        
+
         public BasicPhotoService(IBasicPhotoRepository _basicPhotoRepository)
         {
             basicPhotoRepository = _basicPhotoRepository;

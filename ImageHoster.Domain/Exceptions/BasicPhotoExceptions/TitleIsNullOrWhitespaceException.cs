@@ -1,4 +1,4 @@
-﻿namespace graphicsApp.Exceptions.BasicPhotoExceptions
+﻿namespace ImageHoster.Domain.Exceptions.BasicPhotoExceptions
 {
     public class TitleIsNullOrWhitespaceException : BaseException
     {

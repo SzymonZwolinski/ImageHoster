@@ -1,4 +1,4 @@
-﻿namespace graphicsApp.Exceptions
+﻿namespace ImageHoster.Domain.Exceptions
 {
     public class BaseException : Exception
     {

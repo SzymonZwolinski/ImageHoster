@@ -1,5 +1,5 @@
-﻿using graphicsApp.Services;
-using graphicsApp.Services.Interfaces;
+﻿using ImageHoster.Domain.Services;
+using ImageHoster.Domain.Services.Interfaces;
 
 namespace ImageHoster.Infrastructure.IOC
 {

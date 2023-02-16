@@ -1,4 +1,5 @@
-﻿using graphicsApp.Models;
+﻿
+using ImageHoster.Domain.Models;
 
 namespace ImageHoster.Domain.Repositories
 {

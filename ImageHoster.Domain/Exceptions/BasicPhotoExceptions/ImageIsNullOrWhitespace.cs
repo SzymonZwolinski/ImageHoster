@@ -1,4 +1,6 @@
-﻿namespace graphicsApp.Exceptions.BasicPhotoExceptions
+﻿using ImageHoster.Domain.Exceptions;
+
+namespace ImageHoster.Domain.Exceptions.BasicPhotoExceptions
 {
     public class ImageIsNullOrWhitespace : BaseException
     {
