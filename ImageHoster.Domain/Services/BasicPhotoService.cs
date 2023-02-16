@@ -1,6 +1,6 @@
 ﻿using graphicsApp.Models;
-using graphicsApp.Repositories.Interfaces;
 using graphicsApp.Services.Interfaces;
+using ImageHoster.Domain.Repositories;
 
 namespace graphicsApp.Services
 {

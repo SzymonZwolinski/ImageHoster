@@ -1,6 +1,6 @@
 ﻿using graphicsApp.Exceptions.BasicPhotoExceptions.Repository;
 using graphicsApp.Models;
-using graphicsApp.Repositories.Interfaces;
+using ImageHoster.Domain.Repositories;
 
 namespace graphicsApp.Repositories
 {

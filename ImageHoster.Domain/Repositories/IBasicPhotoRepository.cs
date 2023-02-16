@@ -1,6 +1,6 @@
 ﻿using graphicsApp.Models;
 
-namespace graphicsApp.Repositories.Interfaces
+namespace ImageHoster.Domain.Repositories
 {
     public interface IBasicPhotoRepository
     {
