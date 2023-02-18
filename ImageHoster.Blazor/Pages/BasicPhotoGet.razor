@@ -1,0 +1,42 @@
+﻿@page "/BasicPhotoGet"
+@using ImageHoster.Domain.Models;
+@using ImageHoster.Domain.Services.Interfaces
+@inject IBasicPhotoService _basicPhotoService
+<h3>BasicPhotoGet</h3>
+<ul>
+	@foreach(var photo in photos)
+	{
+		<li>@photo.Title</li>
+		<li>@photo.Description</li>
+		<li>---</li>
+	}
+</ul>
+
+<ul>
+	<div>
+		<input type="text" @bind-value="Title" />
+		<input type="text" @bind-value="Description" />
+		<input type="text" @bind-value="Img" />
+		<button type="submit" onclick="@HandleSubmit">Submit</button>
+	</div>
+</ul>
+
+
+@code {
+	private string Title;
+	private string Description;
+	private string Img;
+	private IEnumerable<BasicPhoto> photos;
+
+	protected override async Task OnInitializedAsync()
+	{
+		photos = _basicPhotoService.GetAllPhotos();
+	}
+
+	private void HandleSubmit()
+	{
+		_basicPhotoService.AddPhoto(Title, Description, Img);
+
+		photos = _basicPhotoService.GetAllPhotos();
+	}
+}

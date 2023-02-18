@@ -30,7 +30,7 @@ namespace ImageHoster.Domain.Models
         {
             if(string.IsNullOrWhiteSpace(title))
             {
-                throw new TitleIsNullOrWhitespaceException();
+                throw new ArgumentNullException();
             }
 
             Title = title;
@@ -40,7 +40,7 @@ namespace ImageHoster.Domain.Models
         {
             if(string.IsNullOrWhiteSpace(description)) 
             {
-                throw new DescriptionIsNullOrWhitespaceException();
+                throw new ArgumentNullException();
             }
 
             Description = description;
@@ -50,7 +50,7 @@ namespace ImageHoster.Domain.Models
         {
             if(string.IsNullOrWhiteSpace(image))
             {
-                throw new ImageIsNullOrWhitespace();
+                throw new ArgumentNullException();
             }
 
             Image = image;
