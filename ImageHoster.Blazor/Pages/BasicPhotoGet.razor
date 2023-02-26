@@ -14,7 +14,6 @@
 
 <ul>
 	<div>
-		<input type="text" @bind-value="Title" />
 		<input type="text" @bind-value="Description" />
 		<input type="text" @bind-value="Img" />
 		<button type="submit" onclick="@HandleSubmit">Submit</button>
@@ -35,7 +34,7 @@
 
 	private void HandleSubmit()
 	{
-		_basicPhotoService.AddPhoto(Title, Description, Img);
+		_basicPhotoService.AddPhoto(Description, Img);
 
 		photos = _basicPhotoService.GetAllPhotos();
 	}

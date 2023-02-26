@@ -1,5 +1,6 @@
 ﻿using ImageHoster.Domain.Exceptions.BasicPhotoExceptions;
 using System.Reflection;
+using System.Security.Cryptography;
 
 namespace ImageHoster.Domain.Models
 {
@@ -15,13 +16,12 @@ namespace ImageHoster.Domain.Models
         public BasicPhoto() { }
 
         public BasicPhoto(
-            string title, 
             string description,
             string image)
         {
             Id = Guid.NewGuid();
-            SetTitle(title);
-            SetDescription(description);
+            Title = EncriptMystring(image);
+			SetDescription(description);
             SetImage(image);
             AddedDate = DateTime.UtcNow;
         }
@@ -48,12 +48,25 @@ namespace ImageHoster.Domain.Models
 
         private void SetImage(string image)
         {
+            
             if(string.IsNullOrWhiteSpace(image))
             {
                 throw new ArgumentNullException();
             }
 
             Image = image;
+        }
+
+        private string EncriptMystring(string image)
+        {
+            image = image + DateTime.UtcNow.ToString("yy/MM/dd HH/MM/ss");
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(image);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                return Convert.ToBase64String(hashBytes);
+            }
         }
     }
 }

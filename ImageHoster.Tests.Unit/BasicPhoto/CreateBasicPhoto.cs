@@ -12,11 +12,9 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 	public class CreateBasicPhoto
 	{
 		private ImageHoster.Domain.Models.BasicPhoto Act(
-			string title,
 			string description,
 			string img)
 			=> new ImageHoster.Domain.Models.BasicPhoto(
-														title, 
 														description,
 														img);
 
@@ -27,7 +25,6 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 
 			//ACT
 			var basicPhoto = Act(
-								Title,
 								Description,
 								Img);
 
@@ -35,7 +32,6 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 			basicPhoto.ShouldNotBeNull();
 			basicPhoto.Id.ShouldNotBe(Guid.Empty);
 
-			basicPhoto.Title.ShouldBe(Title);
 			basicPhoto.Description.ShouldBe(Description);
 			basicPhoto.AddedDate.Day.ShouldBe(DateTime.UtcNow.Day);
 			basicPhoto.AddedDate.Month.ShouldBe(DateTime.UtcNow.Month);
@@ -45,50 +41,13 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 		}
 
 		[Fact]
-		public void given_null_title_should_throw_an_exception()
-		{
-			//ARRANGE
-
-			//ACT
-			var exception = Record.Exception(() =>
-													Act(
-														null,
-														Description,
-														Img));
-
-			//ASSERT
-			exception.ShouldNotBeNull();
-			exception.ShouldBeOfType(typeof(ArgumentNullException));
-		}
-
-		[Fact]
-		public void given_whitespace_title_should_throw_an_exception()
-		{
-			//ARRANGE
-
-			//ACT
-			var exception = Record.Exception(() 
-												=> Act(
-														"",
-														Description,
-														Img));
-
-			//ASSERT
-			exception.ShouldNotBeNull();
-			exception.ShouldBeOfType(typeof(ArgumentNullException));
-		}
-
-		[Fact]
 		public void given_null_description_should_throw_an_exception()
 		{
 			//ARRANGE
 
 			//ACT
 			var exception = Record.Exception(()
-												=> Act(
-														Title,
-														null,
-														Img));
+												=> Act(null, Img));
 
 			//ASSERT
 			exception.ShouldNotBeNull();
@@ -102,10 +61,7 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 
 			//ACT
 			var exception = Record.Exception(()
-												=> Act(
-														Title,
-														"",
-														Img));
+												=> Act("", Img));
 
 			//ASSERT
 			exception.ShouldNotBeNull();
@@ -119,10 +75,7 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 
 			//ACT
 			var exception = Record.Exception(()
-												=> Act(
-														Title,
-														Description,
-														null));
+												=> Act(Description,	null));
 
 			//ASSERT
 			exception.ShouldNotBeNull();
@@ -136,10 +89,7 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 
 			//ACT
 			var exception = Record.Exception(()
-												=> Act(
-														Title,
-														Description,
-														""));
+												=> Act(Description, ""));
 
 			//ASSERT
 			exception.ShouldNotBeNull();
@@ -148,7 +98,6 @@ namespace ImageHoster.Tests.Unit.BasicPhoto
 
 		#region Assert
 
-		private string Title => "BasicPhotoTitle";
 		private string Description => "BasicPhotoDescription";
 		private string Img => "c:/BasicPhotoImgTest/";
 

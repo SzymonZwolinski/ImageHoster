@@ -6,7 +6,7 @@ namespace ImageHoster.Domain.Services.Interfaces
     {
         IEnumerable<BasicPhoto> GetAllPhotos();
         BasicPhoto GetPhoto(Guid id);
-        void AddPhoto(string title, string description, string image);
+        void AddPhoto(string description, string image);
         void DeletePhoto(Guid id);
     }
 }

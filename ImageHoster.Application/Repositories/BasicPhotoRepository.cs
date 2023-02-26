@@ -13,7 +13,6 @@ namespace ImageHoster.Repositories
             for(int i = 0; i < 10; i++)
             {
                 photosMockedDb.Add(new BasicPhoto(
-                    "MockedTitle nr: " + i, 
                     "MockedDescription nr: " + i,
                     "MockedImage nr: " + i));
             }

@@ -23,11 +23,10 @@ namespace ImageHoster.Domain.Services
         }
 
         public void AddPhoto(
-            string title,
             string description,
             string image)
         {
-            var photo = new BasicPhoto(title, description, image);
+            var photo = new BasicPhoto(description, image);
 
             basicPhotoRepository.AddPhoto(photo);
         }
